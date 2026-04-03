@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import { Bell, LogIn, Rabbit, Shield, TrendingDown } from "lucide-react";
 import Image from "next/image";
-import { getProducs } from "./actions";
+import { getProducts } from "./actions";
 import ProductCard from "@/components/ProductCard";
 
 export default async function Home() {
@@ -16,7 +16,7 @@ export default async function Home() {
 
   
 
-  const products = user ? await getProducs() : [];
+  const products = user ? await getProducts() : [];
 
  const FEATURES = [
     {
