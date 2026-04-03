@@ -1,7 +1,7 @@
 import { sendPriceDropAlert } from "@/lib/email";
 import { scrapeProduct } from "@/lib/firecrawl";
 import { createClient } from "@/utils/supabase/server";
-import { createClient } from "@supabase/supabase-js";
+
 import { tryLoadManifestWithRetries } from "next/dist/server/load-components";
 
 export async function GET () {
