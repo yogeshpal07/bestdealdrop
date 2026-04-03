@@ -40,7 +40,7 @@ const {
     const currency = productData.currencyCode || "USD";
 
     const  {data:existingProduct } = await supabase
-     .from("product")
+     .from("products")
      .select ("id,current_price")
      .eq("user_id", user.id)
       .eq("url", url)
@@ -73,7 +73,7 @@ const {
       if (error) throw error;
 
     // Add to price history if it's a new product OR price changed
-    const shouldAddHistory =
+     const shouldAddHistory =
       !isUpdate || existingProduct.current_price !== newPrice;
 
 
@@ -116,7 +116,7 @@ export async function deleteProduct (productId){
 }
 }
 
-export async function getProducs () {
+export async function getProducts () {
   try {
     const supabase  = await createClient();
     const {data,error }= await supabase
