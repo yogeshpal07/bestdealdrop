@@ -1,8 +1,8 @@
 import { sendPriceDropAlert } from "@/lib/email";
 import { scrapeProduct } from "@/lib/firecrawl";
 import { createClient } from "@/utils/supabase/server";
-
-import { tryLoadManifestWithRetries } from "next/dist/server/load-components";
+import { NextResponse } from "next/server";
+//check prices through the api
 
 export async function GET () {
     return NextResponse.json ({
