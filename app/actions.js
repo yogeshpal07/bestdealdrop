@@ -78,6 +78,7 @@ const {
 
 
       if (shouldAddHistory) {
+        
       await supabase.from("price_history").insert({
         product_id: product.id,
         price: newPrice,
